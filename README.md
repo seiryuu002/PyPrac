@@ -1,2 +1,2 @@
 # PyPro
-This repository consists of my python projects and practice questions with solutions
+Hey! I made this repository to upload all the python practice questions which I solve with solutions.
