@@ -1,10 +1,6 @@
 def animal_crackers(text):
-    text = text.upper()
-    string = text.split()
-    if string[0][0] == string[1][0]:
-        return True
-    else:
-        return False
+    string = text.upper().split()
+    return string[0][0] == string[1][0]
 
 
 print(animal_crackers("Levelheaded llama"))
