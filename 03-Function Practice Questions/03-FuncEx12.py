@@ -4,7 +4,8 @@ def count_primes(n):
     primes = [2]
     x = 3
     while x <= n:
-        for i in range(3,x,2):
+        for i in primes:
+            print("|", x, "|", i, "|", x % i, "|")
             if x%i == 0:
                 x += 2
                 break
