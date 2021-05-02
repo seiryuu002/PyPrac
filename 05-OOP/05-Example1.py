@@ -6,6 +6,7 @@ class Dog():
     def __init__(self, name, breed): # it is similar to contructors in c++ or java 
         self.name = name
         self.breed = breed
+    # function inside a class is called method 
     def bark(self, age):
         print('woof! my name is {} and i am {} years old'.format(self.name, age))
 
