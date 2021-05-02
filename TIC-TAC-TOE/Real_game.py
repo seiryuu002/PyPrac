@@ -108,7 +108,7 @@ while True:
                 if full_board_check(theBoard):
                     display_board(theBoard)
                     print('The game is a draw!')
-                    break
+                    game_on = False
                 else:
                     turn = 'Player 2'
 
