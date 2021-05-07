@@ -34,7 +34,7 @@ def place_marker(board, marker, position):
 
 def win_check(board, mark):
 
-    return ((board[7] == board[8] == board[9] == mark) or  # across the top
+    return ((board[7] == board[8] == board[9] == mark) or   # across the top
             # across the middle
             (board[4] == board[5] == board[6] == mark) or
             # across the bottom
@@ -47,22 +47,26 @@ def win_check(board, mark):
             (board[9] == board[6] == board[3] == mark) or
             # diagonal
             (board[7] == board[5] == board[3] == mark) or
-            (board[9] == board[5] == board[1] == mark))  # diagonal
+            (board[9] == board[5] == board[1] == mark))    # diagonal
 
 def choose_first():
     if random.randint(0, 1) == 0:
         return 'Player 2'
     else:
         return 'Player 1'
+
+
 def space_check(board, position):
 
     return board[position] == ' '
+
 
 def full_board_check(board):
     for i in range(1, 10):
         if space_check(board, i):
             return False
     return True
+
 
 def player_choice(board, turn):
     position = 0
@@ -71,6 +75,7 @@ def player_choice(board, turn):
         position = int(input(f'Choose your next position {turn}: (1-9) '))
 
     return position
+
 
 def replay():
     return input('Do you want to play again? Enter Yes or No: ').lower().startswith('y')
