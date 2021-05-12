@@ -3,6 +3,8 @@ Card War Game
 """
 # Card
 # Suit, Rank, Values
+from random import shuffle
+
 suits = ('Hearts', 'Diamonds', 'Spades', 'Clubs')
 ranks = ('Two', 'Three', 'Four', 'Five', 'Six', 'Seven',
          'Eight', 'Nine', 'Ten', 'Jack', 'Queen', 'King', 'Ace')
@@ -23,22 +25,26 @@ class Card:
         """ this function returns the Name of card """
         return self.rank + " of " + self.suit
 
-    def shuffle(self):
-        """ This function shuffle all the cards """
-        return self.rank
 
+class Deck:
+    """ This Class is for defining a Deck of Cards"""
+    def __init__(self):
+        self.all_cards = []
+        for suit in suits:
+            for rank in ranks:
+                created_card = Card(suit, rank)
+                self.all_cards.append(created_card)
 
+    def shuffle_deck(self):
+        shuffle(self.all_cards)
 
-twohearts = Card('Hearts', 'Two')
-threeclub = Card('Club', 'Three')
-print(twohearts)
-print(twohearts.suit)
-print(twohearts.rank)
-print(twohearts.value)
-print(threeclub)
-print(threeclub.suit)
-print(threeclub.rank)
-print(threeclub.value)
+    def deal_one(self):
+        return self.all_cards.pop()
 
-if threeclub.value > twohearts.value:
-    print('player 1 wins')
+new_deck = Deck()
+new_deck.shuffle_deck()
+for card in new_deck.all_cards:
+    print(card)
+my_card = new_deck.deal_one()
+print(my_card)
+print(len(new_deck.all_cards))
